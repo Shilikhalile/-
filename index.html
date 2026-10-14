@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#073b2c">
+  <meta name="description" content="الهدى - رفيقك اليومي للقرآن الكريم والأذكار والصلاة والمعرفة الإسلامية">
+  <title>الهدى | رفيقك إلى الخير</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#home">
+    <span class="brand-mark">ه</span>
+    <span><b>الهدى</b><small>رفيقك إلى الخير</small></span>
+  </a>
+
+  <button class="icon-btn mobile-menu" id="menuToggle" aria-label="القائمة">☰</button>
+
+  <nav id="mainNav">
+    <a href="#quran">القرآن</a>
+    <a href="#prayer">الصلاة</a>
+    <a href="#daily">الأذكار</a>
+    <a href="#knowledge">المعرفة</a>
+    <a href="#tools">الأدوات</a>
+  </nav>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="تبديل المظهر">☾</button>
+</header>
+
+<main id="home">
+
+  <section class="hero section-wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">✦ مساحة للسكينة والتدبّر</div>
+      <h1>اقترب من القرآن،<br><em>واطمئنّ قلبك.</em></h1>
+      <p>رفيقك الإسلامي اليومي: آيات تتلوها، أذكار تحفظها، ومواقيت تساعدك على تنظيم يومك.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#quran">ابدأ القراءة ←</a>
+        <a class="btn btn-quiet" href="#daily">ورد اليوم ✦</a>
+      </div>
+
+      <div class="hero-note">
+        ﴿أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ﴾
+        <small>الرعد: 28</small>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="arch-outer">
+        <div class="arch-inner">
+          <div class="moon">☾</div>
+          <div class="star star-a">✦</div>
+          <div class="star star-b">✧</div>
+          <div class="lantern">۞</div>
+          <div class="arch-caption">نُورٌ عَلَى نُور</div>
+        </div>
+      </div>
+      <div class="floating-chip chip-top">
+        <span>☼</span>
+        <div><b id="hijriHero">التقويم الهجري</b><small>يوم جديد للخير</small></div>
+      </div>
+      <div class="floating-chip chip-bottom">
+        <span>۞</span>
+        <div><b>وردك اليومي</b><small>خطوة صغيرة كل يوم</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-wrap quick-stats">
+    <article class="stat-card">
+      <span class="stat-icon">◷</span>
+      <div><small>الصلاة القادمة</small><b id="nextPrayerName">جارٍ تحديدها</b><span id="nextPrayerTime">حمّل المواقيت</span></div>
+    </article>
+    <article class="stat-card">
+      <span class="stat-icon">۞</span>
+      <div><small>متابعة القرآن</small><b id="lastReadTitle">ابدأ رحلتك</b><span id="lastReadSubtitle">احفظ آخر موضع وصلت إليه</span></div>
+    </article>
+    <article class="stat-card">
+      <span class="stat-icon">✧</span>
+      <div><small>تسبيح اليوم</small><b id="todayCount">0</b><span>تسبيحة في هذه الجلسة</span></div>
+    </article>
+  </section>
+
+  <section class="section-wrap section-block" id="quran">
+    <div class="section-heading">
+      <div><div class="eyebrow">كلام الله</div><h2>القرآن الكريم</h2><p>اقرأ بتأنٍّ، واستمع إلى التلاوة، وارجع إلى موضعك متى شئت.</p></div>
+      <span class="section-ornament">۞</span>
+    </div>
+
+    <div class="quran-layout">
+      <aside class="surah-panel panel">
+        <label class="field-label" for="surahSearch">ابحث عن سورة</label>
+        <input id="surahSearch" class="text-field" placeholder="اسم السورة أو رقمها">
+        <div id="surahList" class="surah-list">جارٍ تحميل فهرس السور…</div>
+      </aside>
+
+      <article class="reading-panel panel">
+        <div class="reading-top">
+          <div><span class="mini-label">تلاوة وتدبّر</span><h3 id="surahTitle">سورة الفاتحة</h3><p id="surahMeta">7 آيات • مكية</p></div>
+          <button id="playAudio" class="round-action" title="استمع">▶</button>
+        </div>
+
+        <div class="audio-row">
+          <label for="reciterSelect">القارئ</label>
+          <select id="reciterSelect" class="select-field">
+            <option value="ar.alafasy">مشاري العفاسي</option>
+            <option value="ar.abdurrahmaansudais">عبد الرحمن السديس</option>
+            <option value="ar.husary">محمود خليل الحصري</option>
+          </select>
+          <audio id="quranAudio" controls preload="none"></audio>
+        </div>
+
+        <div id="ayahContainer" class="ayah-container">جارٍ تحميل الآيات…</div>
+
+        <div class="reading-footer">
+          <span id="readingStatus">المصدر: AlQuran Cloud</span>
+          <button class="btn btn-small btn-outline" id="saveProgress">حفظ موضع القراءة ♡</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-wrap section-block" id="prayer">
+    <div class="section-heading">
+      <div><div class="eyebrow">على وقتها</div><h2>مواقيت الصلاة</h2><p>المواقيت تختلف حسب الموقع وطريقة الحساب.</p></div>
+      <span class="section-ornament">☼</span>
+    </div>
+
+    <div class="prayer-panel panel">
+      <div class="prayer-location">
+        <div class="location-symbol">⌖</div>
+        <div><b id="cityLabel">تونس، تونس</b><small id="prayerDate">جارٍ تحميل التاريخ</small></div>
+        <button id="locateBtn" class="btn btn-outline btn-small">تحديد موقعي</button>
+      </div>
+
+      <form id="cityForm" class="city-form">
+        <input id="cityInput" class="text-field" value="Tunis" placeholder="اسم المدينة بالإنجليزية">
+        <button class="btn btn-primary btn-small" type="submit">تحديث</button>
+      </form>
+
+      <div id="prayerGrid" class="prayer-grid">جارٍ تحميل المواقيت…</div>
+      <p class="fine-print">المواقيت محسوبة عبر خدمة خارجية وقد تختلف عن توقيت المسجد المحلي. اعتمد المصدر الرسمي في منطقتك.</p>
+    </div>
+  </section>
+
+  <section class="section-wrap section-block" id="daily">
+    <div class="section-heading">
+      <div><div class="eyebrow">ذكرٌ يطمئن القلب</div><h2>الأذكار والتسبيح</h2><p>اجعل لنفسك وردًا ثابتًا، ولو كان قليلًا.</p></div>
+      <span class="section-ornament">✧</span>
+    </div>
+
+    <div class="daily-grid">
+      <article class="panel dhikr-panel">
+        <div class="card-topline"><span class="tag">سبحة إلكترونية</span><button id="resetTasbeeh" class="text-btn">إعادة ضبط ↺</button></div>
+        <h3>سبّح واذكر الله</h3>
+        <p class="dhikr-ar" id="tasbeehPhrase">سُبْحَانَ اللَّهِ</p>
+        <div class="counter-wrap">
+          <button id="tasbeehBtn" class="tasbeeh-button"><span>+</span><small>اضغط للتسبيح</small></button>
+          <div class="counter-number"><b id="tasbeehCount">0</b><small>تسبيحة</small></div>
+        </div>
+        <div class="phrase-options">
+          <button class="phrase-chip active" data-phrase="سُبْحَانَ اللَّهِ">سبحان الله</button>
+          <button class="phrase-chip" data-phrase="الْحَمْدُ لِلَّهِ">الحمد لله</button>
+          <button class="phrase-chip" data-phrase="اللَّهُ أَكْبَرُ">الله أكبر</button>
+          <button class="phrase-chip" data-phrase="أَسْتَغْفِرُ اللَّهَ">أستغفر الله</button>
+        </div>
+      </article>
+
+      <article class="panel adhkar-panel">
+        <div class="card-topline"><span class="tag">ورد مختار</span><span class="tiny-muted">مع المصدر</span></div>
+        <h3>أذكار مختارة</h3>
+        <div class="adhkar-list">
+          <div class="dhikr-item"><p>«سُبْحَانَ اللَّهِ وَبِحَمْدِهِ»</p><div><small>من أذكار التسبيح</small><b>ورد يومي</b></div></div>
+          <div class="dhikr-item"><p>«أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ»</p><div><small>صحيح البخاري، 6307</small><b>استغفار وتوبة</b></div></div>
+          <div class="dhikr-item"><p>«اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ»</p><div><small>صيغة عامة للصلاة على النبي ﷺ</small><b>الصلاة على النبي</b></div></div>
+        </div>
+        <p class="fine-print">تثبت من المصادر الأصلية عند تخصيص عدد أو فضيلة لذكر معيّن.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-wrap section-block" id="knowledge">
+    <div class="section-heading">
+      <div><div class="eyebrow">تعلّم كل يوم</div><h2>زاد المعرفة</h2><p>محتوى مختار للقراءة والفهم والتعلّم.</p></div>
+      <span class="section-ornament">۞</span>
+    </div>
+
+    <div class="knowledge-grid">
+      <article class="knowledge-card panel">
+        <div class="knowledge-icon">۞</div><span class="tag">تفسير</span>
+        <h3>افهم معنى الآية</h3><p>افتح تفسير السورة في مصدر خارجي موثوق.</p>
+        <button class="btn btn-outline btn-small" id="openTafsir">فتح التفسير ↗</button>
+      </article>
+
+      <article class="knowledge-card panel">
+        <div class="knowledge-icon">✦</div><span class="tag">حديث</span>
+        <h3>من هدي النبي ﷺ</h3>
+        <p class="hadith-text">«إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ»</p>
+        <p class="hadith-source">صحيح البخاري، حديث 1؛ وصحيح مسلم، حديث 1907</p>
+        <button class="btn btn-outline btn-small" id="nextHadith">حديث آخر ↻</button>
+      </article>
+
+      <article class="knowledge-card panel">
+        <div class="knowledge-icon">☾</div><span class="tag">قصص الأنبياء</span>
+        <h3 id="storyTitle">قصة نبي الله نوح عليه السلام</h3>
+        <p id="storyText">دعا نوح قومه إلى عبادة الله وصبر على أذاهم. (انظر سورة نوح وسورة هود).</p>
+        <button class="btn btn-outline btn-small" id="nextStory">قصة أخرى ↻</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-wrap section-block" id="tools">
+    <div class="section-heading">
+      <div><div class="eyebrow">أدوات يومية</div><h2>أدوات تعينك</h2><p>أدوات بسيطة لتسهيل العبادة والتعلّم.</p></div>
+      <span class="section-ornament">✧</span>
+    </div>
+
+    <div class="tools-grid">
+      <article class="tool-card panel">
+        <div class="tool-icon">⌕</div><h3>البحث الإسلامي</h3>
+        <p>ابحث عن كلمة في القرآن أو عن سورة.</p>
+        <form id="globalSearch" class="search-form">
+          <input id="globalSearchInput" class="text-field" placeholder="آية أو كلمة أو موضوع">
+          <button class="btn btn-primary btn-small">بحث</button>
+        </form>
+        <div id="searchResults" class="search-results"></div>
+      </article>
+
+      <article class="tool-card panel">
+        <div class="tool-icon">◉</div><h3>اتجاه القبلة</h3>
+        <p>احسب اتجاه القبلة من موقعك الجغرافي.</p>
+        <button class="btn btn-primary btn-small" id="qiblaBtn">تحديد اتجاه القبلة</button>
+        <div id="qiblaResult" class="qibla-result">الاتجاه يظهر بعد تحديد موقعك.</div>
+      </article>
+
+      <article class="tool-card panel">
+        <div class="tool-icon">☷</div><h3>التقويم الهجري</h3>
+        <p>تاريخ هجري تقريبي من خدمة المواقيت.</p>
+        <div id="hijriDate" class="hijri-date">جارٍ تحميل التاريخ…</div>
+        <small class="tiny-muted">قد يختلف التاريخ حسب رؤية الهلال والبلد.</small>
+      </article>
+
+      <article class="tool-card panel">
+        <div class="tool-icon">✎</div><h3>اختبر معلوماتك</h3>
+        <p>اختبار قصير في معلومات قرآنية عامة.</p>
+        <div id="quizQuestion" class="quiz-question">كم عدد سور القرآن الكريم؟</div>
+        <div id="quizOptions" class="quiz-options">
+          <button data-answer="114">114</button>
+          <button data-answer="112">112</button>
+          <button data-answer="120">120</button>
+        </div>
+        <div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div>
+        <button class="text-btn" id="newQuiz">سؤال آخر ↻</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="closing-quote section-wrap">
+    <span>۞</span><p>﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾</p><small>طه: 114</small>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a class="brand footer-brand" href="#home"><span class="brand-mark">ه</span><span><b>الهدى</b><small>رفيقك إلى الخير</small></span></a>
+  <p>نسأل الله أن يجعل هذا العمل نافعًا وخالصًا لوجهه الكريم.</p>
+  <div class="footer-links"><a href="#quran">القرآن</a><a href="#prayer">الصلاة</a><a href="#daily">الأذكار</a><a href="#knowledge">المعرفة</a></div>
+  <small>لا يغني الموقع عن أهل العلم في المسائل الشرعية.</small>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+  </html>
